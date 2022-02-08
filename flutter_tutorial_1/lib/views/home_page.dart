@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial_1/views/login_page.dart';
 
 
 
@@ -13,7 +14,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Gezi Rehberim', 
+          'Travel App', 
           style: TextStyle(color: Colors.black54)
         ),
         centerTitle: true,
@@ -42,8 +43,13 @@ class HomePage extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: Colors.white,
                 ),
+                //Sayfalar arası butonla geçiş
                 onPressed: () {
-                print('Log in button');
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(
+                    builder: (context) => const LoginPage())
+                );
               },
               child: const Text('Login', style: TextStyle(color: Colors.blue, fontSize: 18, fontWeight: FontWeight.bold),)),
 
