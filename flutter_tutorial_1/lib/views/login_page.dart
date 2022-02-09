@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial_1/views/menu_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -22,9 +23,9 @@ class _LoginPageState extends State<LoginPage> {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 212, 209, 209),
+      backgroundColor: const Color.fromARGB(255, 243, 241, 241),
       appBar: AppBar(
-        backgroundColor: Colors.blue[600],
+        backgroundColor: Color.fromARGB(255, 91, 169, 238),
         title: const Text(
           'Travel App', 
           style: TextStyle(
@@ -37,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
 
       body: Padding(
         padding: const EdgeInsets.only(
-          left: 20.0, right: 20, top:10
+          left: 20.0, right: 20, top:150
         ),
           child: SingleChildScrollView(
             child: Column(
@@ -56,8 +57,8 @@ class _LoginPageState extends State<LoginPage> {
                     )],
                   ),
                   child: Padding(
-                    padding: EdgeInsets.only(
-                      left: 20.0, right: 20, top:size.height * .4, bottom: size.height * .06
+                    padding: const EdgeInsets.only(
+                      left: 20.0, right: 20, top:50, bottom: 50
                     ),
                     child: Column(
                       children: [
@@ -133,10 +134,13 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 100,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, 
+                    MaterialPageRoute(builder: (context) => MenuPage()));
+                  },
                   child: const Text('Login'),
                   style: ElevatedButton.styleFrom(
                       primary: const Color.fromARGB(255, 149, 189, 221),

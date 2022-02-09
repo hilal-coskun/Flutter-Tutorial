@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial_1/views/login_page.dart';
+import 'package:flutter_tutorial_1/views/register_page.dart';
 
 
 
@@ -65,6 +66,8 @@ class HomePage extends StatelessWidget {
                       primary: Colors.blue[300],
                     ),
                     onPressed: () {
+                      Navigator.push(context, 
+                      MaterialPageRoute(builder: (context) => RegisterPage()));
                     print('Sign Up button');
                   },
                   
