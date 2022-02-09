@@ -33,75 +33,77 @@ class _LoginPageState extends State<LoginPage> {
         padding: const EdgeInsets.only(
           left: 20.0, right: 20, top:100, bottom: 100
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                border: Border.all(
-                  color: Color.fromARGB(255, 90, 75, 75),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(20)),
+                  border: Border.all(
+                    color: const Color.fromARGB(255, 90, 75, 75),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 20.0, right: 20, top:100, bottom: 100
+                  ),
+                  child: Column(
+                    children: [
+                      TextField(
+                        controller: emailController,
+                        cursorColor: Colors.blue[900],
+                        decoration: const InputDecoration(
+                          prefixIcon: Icon(
+                            Icons.mail,
+                            color: Color.fromARGB(255, 78, 70, 70),
+                          ),
+                          hintText: 'Email',
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                          )
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      TextField(
+                        controller: passwordController,
+                        cursorColor: Colors.blue[900],
+                        decoration: const InputDecoration(
+                          prefixIcon: Icon(
+                            Icons.lock,
+                            color: Color.fromARGB(255, 78, 70, 70),
+                          ),
+                          hintText: 'Password',
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                          )
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.only(
-                left: 20.0, right: 20, top:100, bottom: 100
-                ),
-                child: Column(
-                  children: [
-                    TextField(
-                      controller: emailController,
-                      cursorColor: Colors.blue[900],
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.mail,
-                          color: Color.fromARGB(255, 78, 70, 70),
-                        ),
-                        hintText: 'Email',
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black),
-                        ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black),
-                        )
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    TextField(
-                      controller: passwordController,
-                      cursorColor: Colors.blue[900],
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.lock,
-                          color: Color.fromARGB(255, 78, 70, 70),
-                        ),
-                        hintText: 'Password',
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black),
-                        ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black),
-                        )
-                      ),
-                    ),
-                  ],
-                ),
+              const SizedBox(
+                height: 20,
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('Login'),
-              style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 149, 189, 221),
-                )
-            )
-          ],
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text('Login'),
+                style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 149, 189, 221),
+                  )
+              )
+            ],
+          ),
         ),
       ),
     );

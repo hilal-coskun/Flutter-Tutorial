@@ -12,10 +12,11 @@ class HomePage extends StatelessWidget {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
-          'Travel App', 
-          style: TextStyle(color: Colors.black54)
+          'TRAVEL APP', 
+          style: TextStyle(color: Color.fromARGB(255, 23, 99, 167), fontWeight: FontWeight.bold)
         ),
         centerTitle: true,
         backgroundColor: Colors.white,
@@ -24,48 +25,56 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.only(
           right: 20.0, left: 20.0, top: 50, bottom: 100,
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            //add image
-            Image.asset(
-              'assets/images/background.jpg',
-              height: size.height * .5,
-              fit: BoxFit.cover,
-            ),
-            Column(
-              //Butonlar sayfaya hizalandı
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              //Sayfa sonuna taşındı (Column içindeki tüm widgetları)
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.white,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              //add image
+              Image.asset(
+                'assets/images/travel.jpg',
+                height: size.height * .5,
+                width: size.width * .9,
+                fit: BoxFit.cover,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 30
                 ),
-                //Sayfalar arası butonla geçiş
-                onPressed: () {
-                Navigator.push(
-                  context, 
-                  MaterialPageRoute(
-                    builder: (context) => const LoginPage())
-                );
-              },
-              child: const Text('Login', style: TextStyle(color: Colors.blue, fontSize: 18, fontWeight: FontWeight.bold),)),
-
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.white,
+                child: Column(
+                  //Butonlar sayfaya hizalandı
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  //Sayfa sonuna taşındı (Column içindeki tüm widgetları)
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.blue[300],
+                    ),
+                    //Sayfalar arası butonla geçiş
+                    onPressed: () {
+                    Navigator.push(
+                      context, 
+                      MaterialPageRoute(
+                        builder: (context) => const LoginPage())
+                    );
+                  },
+                  child: const Text('Login', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),)),
+        
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.blue[300],
+                    ),
+                    onPressed: () {
+                    print('Sign Up button');
+                  },
+                  
+                  child: const Text('Sign Up', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),)
+                  )
+                  ],
                 ),
-                onPressed: () {
-                print('Sign Up button');
-              },
-              
-              child: const Text('Sign Up', style: TextStyle(color: Colors.blue, fontSize: 18, fontWeight: FontWeight.bold),)
               )
-              ],
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );
