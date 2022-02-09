@@ -104,10 +104,16 @@ class _LoginPageState extends State<LoginPage> {
                                   print(isVisible);
                                 }
                               },
-                              child: const Icon(
-                                Icons.remove_red_eye,
-                                color: Color.fromARGB(255, 78, 70, 70),
-                              ),
+                              child: isVisible 
+                                ? const Icon(
+                                  Icons.remove_red_eye,
+                                  color: Colors.black,
+                                )
+                                : const Icon(
+                                  Icons.remove_red_eye_outlined,
+                                  color: Colors.black,
+                                ),
+                                
                             ),
                             prefixIcon: const Icon(
                               Icons.lock,
