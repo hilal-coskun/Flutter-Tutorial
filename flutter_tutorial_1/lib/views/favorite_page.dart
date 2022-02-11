@@ -4,12 +4,18 @@ class FavoritePage extends StatefulWidget {
   FavoritePage({Key? key}) : super(key: key);
 
   @override
-  State<FavoritePage> createState() => _nameState();
+  State<FavoritePage> createState() => _FavoritePageState();
 }
 
-class _nameState extends State<FavoritePage> {
+class _FavoritePageState extends State<FavoritePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Center(
+        child: Container(
+          child: Text('Favoriler'),
+        ),
+      ),
+    );
   }
 }

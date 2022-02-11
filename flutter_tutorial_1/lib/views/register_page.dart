@@ -23,7 +23,7 @@ class _RegisterPageState extends State<RegisterPage> {
   bool man = false;
 
   //for dropdown 
-  int _value = 1;
+  final int _value = 1;
   var cities = ['Ankara', 'Istanbul', 'Izmir', 'Antalya'];
 
   @override

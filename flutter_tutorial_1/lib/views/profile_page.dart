@@ -4,12 +4,18 @@ class ProfilePage extends StatefulWidget {
   ProfilePage({Key? key}) : super(key: key);
 
   @override
-  State<ProfilePage> createState() => _nameState();
+  State<ProfilePage> createState() => _ProfilePageState();
 }
 
-class _nameState extends State<ProfilePage> {
+class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Center(
+        child: Container(
+          child: Text('Profile'),
+        ),
+      ),
+    );
   }
 }

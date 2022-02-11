@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial_1/views/favorite_page.dart';
+import 'package:flutter_tutorial_1/views/home_page.dart';
+import 'package:flutter_tutorial_1/views/profile_page.dart';
 
 class MenuPage extends StatefulWidget {
   MenuPage({Key? key}) : super(key: key);
@@ -14,6 +17,7 @@ class _MenuPageState extends State<MenuPage> {
   void _onItemTapped(int index){
     setState(() {
       _selectedIndex = index;
+      print('index: $_selectedIndex');
     });
   }
 
@@ -32,8 +36,8 @@ class _MenuPageState extends State<MenuPage> {
         centerTitle: true,
       ),
 
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
+      bottomNavigationBar:  BottomNavigationBar(
+        items: const  <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home), 
             label: 'Anasayfa',
@@ -52,14 +56,10 @@ class _MenuPageState extends State<MenuPage> {
       ),
 
 
-      body: Center(
-        child: Container(
-          child: const Text('Hoş Geldiniz...'),
-        ),
-      ),
-
-
-
-    );
+      body: 
+        _selectedIndex == 0 ? HomePage() 
+        :_selectedIndex == 1 ? FavoritePage() 
+        : ProfilePage()
+      );
   }
 }
