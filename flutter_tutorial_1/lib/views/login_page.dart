@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 243, 241, 241),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 91, 169, 238),
+        backgroundColor: const Color.fromARGB(255, 91, 169, 238),
         title: const Text(
           'Travel App', 
           style: TextStyle(

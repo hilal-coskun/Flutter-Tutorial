@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial_1/views/home_page.dart';
+import 'package:flutter_tutorial_1/views/launch_page.dart';
 
 class RegisterPage extends StatefulWidget {
   RegisterPage({Key? key}) : super(key: key);
@@ -22,6 +22,9 @@ class _RegisterPageState extends State<RegisterPage> {
   bool woman = false;
   bool man = false;
 
+  //for dropdown 
+  int _value = 1;
+  var cities = ['Ankara', 'Istanbul', 'Izmir', 'Antalya'];
 
   @override
   Widget build(BuildContext context) {
@@ -201,7 +204,9 @@ class _RegisterPageState extends State<RegisterPage> {
                             )
                           ),
                         ),
-                        
+                        const SizedBox(
+                          height: 20,
+                        ),
                         Row(
                           children: [ 
                             Expanded(
@@ -231,6 +236,22 @@ class _RegisterPageState extends State<RegisterPage> {
                               ),
                             )
                           ],
+                        ),
+                        Center(
+                          child: Container(
+                            child: DropdownButton(
+                              onChanged: (value){
+
+                              },
+                              value: _value,
+                              hint: const Text('City'),
+                              items:const [
+                                DropdownMenuItem(child: Text('Ankara'), value: 1,),
+                                DropdownMenuItem(child: Text('Izmir'), value: 2,),
+                                DropdownMenuItem(child: Text('Antalya'), value: 3,)
+                              ],
+                            ), 
+                          )
                         )
                       ],
                     ),
@@ -242,7 +263,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(context, 
-                    MaterialPageRoute(builder: (context) => HomePage()));
+                    MaterialPageRoute(builder: (context) => const LaunchPage()));
                   },
                   child: const Text('Register'),
                   style: ElevatedButton.styleFrom(

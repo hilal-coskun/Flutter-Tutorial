@@ -8,25 +8,58 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
+
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index){
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 243, 241, 241),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 91, 169, 238),
+        backgroundColor: const Color.fromARGB(255, 91, 169, 238),
         title: const Text(
           'Travel App', 
           style: TextStyle(
             color: Colors.white
           ),
         ),
-        
         centerTitle: true,
       ),
 
-      body: Container(
-        child: const Text('Hoş Geldiniz...'),
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home), 
+            label: 'Anasayfa',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.star), 
+            label: 'Favoriler',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person), 
+            label: 'Profil',
+          )
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
+
+
+      body: Center(
+        child: Container(
+          child: const Text('Hoş Geldiniz...'),
+        ),
+      ),
+
+
+
     );
   }
 }
