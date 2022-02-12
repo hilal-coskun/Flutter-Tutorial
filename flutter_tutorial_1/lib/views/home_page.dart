@@ -20,6 +20,14 @@ class _HomePageState extends State<HomePage> {
   late CarouselSlider carouselSlider;
   int _current = 0;
 
+  List<T> map<T>(List list, Function handler){
+    List<T> result = [];
+    for(var i = 0; i < list.length; i++){
+      result.add(handler(i, list[i]));
+    }
+    return result;
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -61,6 +69,24 @@ class _HomePageState extends State<HomePage> {
                   });
               },
             ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: map<Widget>(imgList,(index, url){
+              return Container(
+                width: 10,
+                height: 10,
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 2),
+                decoration: BoxDecoration(
+                  color: _current == index ? Colors.blue : Colors.grey,
+                  shape: BoxShape.circle
+                ),
+              );
+            }),
           )
         ],
       )
