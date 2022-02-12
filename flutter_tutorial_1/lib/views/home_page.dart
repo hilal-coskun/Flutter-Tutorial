@@ -87,7 +87,107 @@ class _HomePageState extends State<HomePage> {
                 ),
               );
             }),
-          )
+          ),
+          SizedBox(
+            height: 20,
+          ),
+
+        Expanded(
+          child: ListView(
+            children: [
+              Card(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.all(1.0),
+                      child: ListTile(
+                        title: Text('Galata Kulesi'),
+                        subtitle: Text('Bereketzade, Galata Kulesi, 34421 Beyoğlu/İstanbul'),
+                        trailing: Icon(
+                          Icons.location_on,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+            ),
+            Card(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.all(3.0),
+                      child: ListTile(
+                        title: Text('Galata Kulesi'),
+                        subtitle: Text('Bereketzade, Galata Kulesi, 34421 Beyoğlu/İstanbul'),
+                        trailing: Icon(
+                          Icons.location_on,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+            ),
+            Card(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.all(3.0),
+                      child: ListTile(
+                        title: Text('Galata Kulesi'),
+                        subtitle: Text('Bereketzade, Galata Kulesi, 34421 Beyoğlu/İstanbul'),
+                        trailing: Icon(
+                          Icons.location_on,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+            ),
+            Card(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.all(3.0),
+                      child: ListTile(
+                        title: Text('Galata Kulesi'),
+                        subtitle: Text('Bereketzade, Galata Kulesi, 34421 Beyoğlu/İstanbul'),
+                        trailing: Icon(
+                          Icons.location_on,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+            ),
+            Card(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.all(3.0),
+                      child: ListTile(
+                        title: Text('Galata Kulesi'),
+                        subtitle: Text('Bereketzade, Galata Kulesi, 34421 Beyoğlu/İstanbul'),
+                        trailing: Icon(
+                          Icons.location_on,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+            ),
+            ],
+          ),
+        )
         ],
       )
     );
