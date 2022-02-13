@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial_1/views/favorite_page.dart';
+import 'package:flutter_tutorial_1/views/add_page.dart';
 import 'package:flutter_tutorial_1/views/home_page.dart';
 import 'package:flutter_tutorial_1/views/launch_page.dart';
 import 'package:flutter_tutorial_1/views/profile_page.dart';
@@ -102,7 +102,7 @@ class _MenuPageState extends State<MenuPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.star), 
-            label: 'Favoriler',
+            label: 'Ekle',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person), 
@@ -116,7 +116,7 @@ class _MenuPageState extends State<MenuPage> {
       //sayfalar arası geçiş
       body: 
         _selectedIndex == 0 ? HomePage() 
-        :_selectedIndex == 1 ? FavoritePage() 
+        :_selectedIndex == 1 ? AddPage() 
         : ProfilePage()
       );
   }
