@@ -82,22 +82,100 @@ class _HomePageState extends State<HomePage> {
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: 200,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Color.fromARGB(255, 3, 32, 51),
-                      Color.fromARGB(255, 81, 175, 226),
-                    ]
+                      Color.fromARGB(251, 3, 32, 51),
+                      Color.fromARGB(226, 81, 175, 226),
+                    ],
+                    begin: Alignment.bottomLeft,
+                    end: Alignment.centerRight 
                   ),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(10),
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10),
                     topRight: Radius.circular(80),
-                  )
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(5, 10),
+                      blurRadius: 20,
+                      color: Color.fromARGB(153, 21, 92, 139),
+                    )
+                  ]
                 ),
-              )
-          ]),
+                child: Container(
+                  padding: const EdgeInsets.only(left: 20,top: 25, right: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Next workout',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Color.fromARGB(255, 245, 247, 248),
+                        ),
+                      ),
+                      SizedBox(height: 5,),
+                      Text(
+                        'Legs Toning',
+                        style: TextStyle(
+                          fontSize: 23,
+                          color: Color.fromARGB(255, 245, 247, 248),
+                        ),
+                      ),
+                      SizedBox(height: 5,),
+                      Text(
+                        'and Glutes Workout',
+                        style: TextStyle(
+                          fontSize: 23,
+                          color: Color.fromARGB(255, 245, 247, 248),
+                        ),
+                      ),
+                      SizedBox(height: 25,),
+                      Row(
+                        children: [
+                          Row(
+                            children: [
+                              Icon(Icons.timer, size: 10, color: Color.fromARGB(255, 245, 247, 248),),
+                              SizedBox(width:10,),
+                              Text(
+                              '60 min',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Color.fromARGB(255, 245, 247, 248),
+                              ),
+                              ),
+                              
+                            ],
+                          ),
+                          Expanded(child: Container()),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(60),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Color.fromARGB(251, 3, 32, 51),
+                                  blurRadius: 10,
+                                  offset: Offset(4, 8)
+                                )
+                              ]
+                            ),
+                            child: Icon(
+                              Icons.play_circle_fill,
+                              color: Colors.white,
+                              size: 60,
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+              ),
+          ]
+          ),
         ),
       ),
     );
