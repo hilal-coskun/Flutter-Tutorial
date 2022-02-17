@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
                     "Training",
                     style: TextStyle(
                       fontSize:30,
-                      color: Color.fromARGB(255, 1, 18, 27),
+                      color: Color(0xFF01121B),
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -173,6 +173,102 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 )
+              ),
+              SizedBox(height: 5,),
+              Container(
+                height: 180,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 30.0),
+                  child: Stack(
+                    children: [
+                      /*Container(
+                        height: 200,
+                        width: MediaQuery.of(context).size.width,
+                        margin: const EdgeInsets.only(right: 200, bottom: 30),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/yoga.png"
+                            ),
+                          )
+                        )
+                      ),
+                      Container(
+                        width: double.maxFinite,
+                        height: 100,
+                        margin: const EdgeInsets.only(left:150, top: 40),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "You are doing great",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromARGB(255, 73, 151, 194),
+                              ),
+                            ),
+                            SizedBox(height: 10,),
+                            RichText(
+                              text: TextSpan(
+                                text: "Keep it up \n",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 81, 87, 90),
+                                  fontSize: 13,
+                                ),
+                                children: [
+                                  TextSpan(
+                                    text: "stick to your plan"
+                                  )
+                                ]
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),*/
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 0),
+                            child: Text(
+                              "Area of foucs",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.w500,
+                                color: Color.fromARGB(255, 0, 17, 26),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 150,),
+                      Expanded(child: ListView.builder(
+                        itemBuilder: (_, i){
+                          return Row(
+                            children: [
+                              Container(
+                                width: 200,
+                                height: 170,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                      "assets/card.jpg"
+                                    )
+                                  )
+                                ),
+
+                              )
+                            ],
+                          );
+                        },
+                      ))
+                    ],
+                  ),
+                ),
               ),
           ]
           ),
