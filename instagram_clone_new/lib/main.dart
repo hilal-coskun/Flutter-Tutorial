@@ -5,6 +5,7 @@ import 'package:instagram_clone_new/responsive/mobile_screen_layout.dart';
 import 'package:instagram_clone_new/responsive/responsive_layout_screen.dart';
 import 'package:instagram_clone_new/responsive/web_screen_layout.dart';
 import 'package:instagram_clone_new/screens/login_screen.dart';
+import 'package:instagram_clone_new/screens/signup_screen.dart';
 import 'package:instagram_clone_new/utils/color.dart';
 
 void main() async{
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
       //  mobileScreenLayout: MobilScreenLayout(), 
       //  webScreenLayout: WebScreenLayout(),
       //),
-      home: LoginScreen(),
+      home: SignupScreen(),
     );
   }
 }
